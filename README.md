@@ -30,7 +30,7 @@ Using the PHP built-in server for development purposes with the command:
     // composer.json
     ...
     "scripts": {
-        "serve": "php -S localhost:8000 -t public"
+        "server": "php -S localhost:8000 -t public -d display_errors=1"
     }
     ...
 

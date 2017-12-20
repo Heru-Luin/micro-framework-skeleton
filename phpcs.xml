@@ -8,6 +8,8 @@
     
     <file>src</file>
     
+    <exclude-pattern>*/src/Model/*</exclude-pattern>
+    
     <rule ref="PSR2"></rule>
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"></rule>
 </ruleset>
