@@ -8,6 +8,7 @@
         }
     ],
     "autoload": {
+        "classmap": ["src/Model/"],
         "psr-4": {
             "": "src/",
             "Test\\": "tests/"
