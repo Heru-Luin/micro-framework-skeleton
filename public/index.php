@@ -15,7 +15,6 @@ class Kernel
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        r((new AuthorQuery())->findPk(1)); exit;
         // 1) Extract uri
         $uri = $request->getUri()->getPath();
        
