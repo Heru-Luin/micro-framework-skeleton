@@ -25,5 +25,8 @@
         "digitalnature/php-ref": "^1.2",
         "psy/psysh": "@stable",
         "phing/phing": "^2.16"
+    },
+    "scripts": {
+        "server": "php -S localhost -t public"
     }
 }

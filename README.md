@@ -17,7 +17,7 @@ Using the PHP built-in server for development purposes with the command:
     // composer.json
     ...
     "scripts": {
-        "serve": "php -S 0.0.0.0:8000 index.php"
+        "serve": "php -S 0.0.0.0:8000 -t public"
     }
     ...
 
