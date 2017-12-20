@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="TOKEN" default="build">
+
+    <!-- ============================================  -->
+    <!-- Target: prepare                               -->
+    <!-- ============================================  -->
+    <target name="prepare">
+        <echo msg="Making directory ./build" />
+        <mkdir dir="./build" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: build                                 -->
+    <!-- ============================================  -->
+    <target name="build" depends="prepare">
+        <exec
+            command="./vendor/bin/phpcs"
+            passthru="true"
+            checkreturn="true"
+            />
+        <exec
+            command="./vendor/bin/phpunit"
+            passthru="true"
+            checkreturn="true"            
+            />        
+    </target>
+</project>

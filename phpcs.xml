@@ -7,7 +7,6 @@
     <arg value="p"/>
     
     <file>src</file>
-    <file>public/index.php</file>
     
     <rule ref="PSR2"></rule>
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"></rule>
