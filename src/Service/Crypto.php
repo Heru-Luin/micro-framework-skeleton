@@ -2,7 +2,7 @@
 
 namespace Service;
 
-class Hsm
+class Crypto
 {
     private $client;
     
@@ -12,12 +12,12 @@ class Hsm
     }
     
     /**
-     * Returns createToken string
+     * Returns 256 sha hash
      *
      * @return string
      */
-    public function createToken()
+    public function createHash(string $algorithm, string $data): string
     {
-        return 'createToken';
+        return hash($algorithm, $data);
     }
 }

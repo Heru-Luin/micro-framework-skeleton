@@ -12,7 +12,7 @@ class RandomInteger extends Command
     {
         $this
             ->setName('random:integer')
-            ->setDescription('Get random integer')
+            ->setDescription('Get random integer (10, 100)')
             ->setHelp('This command allows you get random integer');
     }
 
