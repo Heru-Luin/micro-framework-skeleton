@@ -1,9 +1,9 @@
 <?php
 
-namespace Map;
+namespace Model\Map;
 
-use \User;
-use \UserQuery;
+use Model\User;
+use Model\UserQuery;
 use Propel\Runtime\Propel;
 use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\InstancePoolTrait;
@@ -34,7 +34,7 @@ class UserTableMap extends TableMap
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = '.Map.UserTableMap';
+    const CLASS_NAME = 'Model.Map.UserTableMap';
 
     /**
      * The default database name for this class
@@ -49,12 +49,12 @@ class UserTableMap extends TableMap
     /**
      * The related Propel class for this table
      */
-    const OM_CLASS = '\\User';
+    const OM_CLASS = '\\Model\\User';
 
     /**
      * A class that can be returned by this tableMap
      */
-    const CLASS_DEFAULT = 'User';
+    const CLASS_DEFAULT = 'Model.User';
 
     /**
      * The total number of columns
@@ -132,8 +132,8 @@ class UserTableMap extends TableMap
         $this->setName('user');
         $this->setPhpName('User');
         $this->setIdentifierQuoting(false);
-        $this->setClassName('\\User');
-        $this->setPackage('');
+        $this->setClassName('\\Model\\User');
+        $this->setPackage('Model');
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
@@ -342,7 +342,7 @@ class UserTableMap extends TableMap
         if ($values instanceof Criteria) {
             // rename for clarity
             $criteria = $values;
-        } elseif ($values instanceof \User) { // it's a model object
+        } elseif ($values instanceof \Model\User) { // it's a model object
             // create criteria based on pk values
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks

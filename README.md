@@ -19,7 +19,7 @@ Dump schema & data to MySQL
 Setup models
 ------------
     
-    ./vendor/bin/propel model:build --config-dir config/propel.php --schema-dir src/Model/Config --output-dir src/Model
+    ./vendor/bin/propel model:build --config-dir config/propel.php --schema-dir src/Model/Config --output-dir src
     ./vendor/bin/propel config:convert --config-dir config/propel.php --output-dir src/Model/Config
         
 Run application

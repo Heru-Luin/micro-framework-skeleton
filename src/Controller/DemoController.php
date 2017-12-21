@@ -8,7 +8,7 @@ use GuzzleHttp\Psr7\ServerRequest;
 class DemoController
 {
 
-    public function demoAction(\Service\Crypto $crypto): Response
+    public function demoAction(\Service\Crypto $crypto, \Model\User $user): Response
     {
         return new Response(
             200,
