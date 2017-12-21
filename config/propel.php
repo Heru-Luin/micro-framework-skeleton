@@ -4,10 +4,10 @@ return [
     'propel' => [
         'database' => [
             'connections' => [
-                'bookstore' => [
+                'micro_framework' => [
                     'adapter'    => 'mysql',
                     'classname'  => 'Propel\Runtime\Connection\ConnectionWrapper',
-                    'dsn'        => 'mysql:host=localhost;dbname=bookstore',
+                    'dsn'        => 'mysql:host=localhost;dbname=micro_framework',
                     'user'       => 'root',
                     'password'   => 'root',
                     'attributes' => []
@@ -15,12 +15,12 @@ return [
             ]
         ],
         'runtime' => [
-            'defaultConnection' => 'bookstore',
-            'connections' => ['bookstore']
+            'defaultConnection' => 'micro_framework',
+            'connections' => ['micro_framework']
         ],
         'generator' => [
-            'defaultConnection' => 'bookstore',
-            'connections' => ['bookstore']
+            'defaultConnection' => 'micro_framework',
+            'connections' => ['micro_framework']
         ]
     ]
 ];

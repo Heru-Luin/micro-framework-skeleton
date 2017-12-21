@@ -1,9 +1,9 @@
 <?php
 
-use Base\PublisherQuery as BasePublisherQuery;
+use Base\UserQuery as BaseUserQuery;
 
 /**
- * Skeleton subclass for performing query and update operations on the 'publisher' table.
+ * Skeleton subclass for performing query and update operations on the 'user' table.
  *
  *
  *
@@ -12,7 +12,7 @@ use Base\PublisherQuery as BasePublisherQuery;
  * long as it does not already exist in the output directory.
  *
  */
-class PublisherQuery extends BasePublisherQuery
+class UserQuery extends BaseUserQuery
 {
 
 }

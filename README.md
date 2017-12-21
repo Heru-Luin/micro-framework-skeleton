@@ -7,18 +7,19 @@ Install dependencies
 
     composer install
     
-Setup models
-------------
-
-    ./vendor/bin/propel sql:build --config-dir config/propel.php --schema-dir src/Model/Config --output-dir src/Model/Sql
-    ./vendor/bin/propel model:build --config-dir config/propel.php --schema-dir src/Model/Config --output-dir src/Model
-    ./vendor/bin/propel config:convert --config-dir config/propel.php --output-dir src/Model/Config
     
 Dump schema & data to MySQL
 ---------------------------
 
-    mysqladmin -u root -p create bookstore
+    mysqladmin -u root -p create micro_framework
+    ./vendor/bin/propel sql:build --config-dir config/propel.php --schema-dir src/Model/Config --output-dir src/Model/Sql
     ./vendor/bin/propel sql:insert --config-dir config/propel.php --sql-dir src/Model/Sql
+    
+Setup models
+------------
+    
+    ./vendor/bin/propel model:build --config-dir config/propel.php --schema-dir src/Model/Config --output-dir src/Model
+    ./vendor/bin/propel config:convert --config-dir config/propel.php --output-dir src/Model/Config
         
 Run application
 ---------------
