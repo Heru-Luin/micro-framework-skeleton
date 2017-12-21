@@ -48,43 +48,43 @@ Result -->
 Project Structure
 -----------------
     .
-    ├── ./bin
-    │   └── ./bin/console
-    ├── ./build.xml
-    ├── ./composer.json
-    ├── ./composer.lock
-    ├── ./config
-    │   ├── ./config/propel.php
-    │   ├── ./config/routes.php
-    │   └── ./config/services.php
-    ├── ./phpcs.xml
-    ├── ./phpunit.xml
-    ├── ./public
-    │   └── ./public/index.php
-    ├── ./README.md
-    ├── ./src
-    │   ├── ./src/Command
-    │   │   └── ./src/Command/RandomInteger.php
-    │   ├── ./src/Controller
-    │   │   └── ./src/Controller/DemoController.php
-    │   ├── ./src/Model
-    │   │   ├── ./src/Model/Base
-    │   │   │   ├── ./src/Model/Base/User.php
-    │   │   │   └── ./src/Model/Base/UserQuery.php
-    │   │   ├── ./src/Model/Config
-    │   │   │   ├── ./src/Model/Config/config.php
-    │   │   │   └── ./src/Model/Config/schema.xml
-    │   │   ├── ./src/Model/Map
-    │   │   │   └── ./src/Model/Map/UserTableMap.php
-    │   │   ├── ./src/Model/Sql
-    │   │   │   ├── ./src/Model/Sql/micro_framework.sql
-    │   │   │   └── ./src/Model/Sql/sqldb.map
-    │   │   ├── ./src/Model/User.php
-    │   │   └── ./src/Model/UserQuery.php
-    │   └── ./src/Service
-    │       └── ./src/Service/Crypto.php
-    └── ./tests
-        └── ./tests/Service
-            └── ./tests/Service/CryptoTest.php
+    ├── bin
+    │   └── console
+    ├── build.xml
+    ├── composer.json
+    ├── composer.lock
+    ├── config
+    │   ├── propel.php
+    │   ├── routes.php
+    │   └── services.php
+    ├── phpcs.xml
+    ├── phpunit.xml
+    ├── public
+    │   └── index.php
+    ├── README.md
+    ├── src
+    │   ├── Command
+    │   │   └── RandomInteger.php
+    │   ├── Controller
+    │   │   └── DemoController.php
+    │   ├── Model
+    │   │   ├── Base
+    │   │   │   ├── User.php
+    │   │   │   └── UserQuery.php
+    │   │   ├── Config
+    │   │   │   ├── config.php
+    │   │   │   └── schema.xml
+    │   │   ├── Map
+    │   │   │   └── UserTableMap.php
+    │   │   ├── Sql
+    │   │   │   ├── micro_framework.sql
+    │   │   │   └── sqldb.map
+    │   │   ├── User.php
+    │   │   └── UserQuery.php
+    │   └── Service
+    │       └── Crypto.php
+    └── tests
+        └── Service
+            └── CryptoTest.php
 
 Enjoy!
