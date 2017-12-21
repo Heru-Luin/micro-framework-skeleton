@@ -47,44 +47,44 @@ Result -->
     
 Project Structure
 -----------------
-.
-├── ./bin
-│   └── ./bin/console
-├── ./build.xml
-├── ./composer.json
-├── ./composer.lock
-├── ./config
-│   ├── ./config/propel.php
-│   ├── ./config/routes.php
-│   └── ./config/services.php
-├── ./phpcs.xml
-├── ./phpunit.xml
-├── ./public
-│   └── ./public/index.php
-├── ./README.md
-├── ./src
-│   ├── ./src/Command
-│   │   └── ./src/Command/RandomInteger.php
-│   ├── ./src/Controller
-│   │   └── ./src/Controller/DemoController.php
-│   ├── ./src/Model
-│   │   ├── ./src/Model/Base
-│   │   │   ├── ./src/Model/Base/User.php
-│   │   │   └── ./src/Model/Base/UserQuery.php
-│   │   ├── ./src/Model/Config
-│   │   │   ├── ./src/Model/Config/config.php
-│   │   │   └── ./src/Model/Config/schema.xml
-│   │   ├── ./src/Model/Map
-│   │   │   └── ./src/Model/Map/UserTableMap.php
-│   │   ├── ./src/Model/Sql
-│   │   │   ├── ./src/Model/Sql/micro_framework.sql
-│   │   │   └── ./src/Model/Sql/sqldb.map
-│   │   ├── ./src/Model/User.php
-│   │   └── ./src/Model/UserQuery.php
-│   └── ./src/Service
-│       └── ./src/Service/Crypto.php
-└── ./tests
-    └── ./tests/Service
-        └── ./tests/Service/CryptoTest.php
+    .
+    ├── ./bin
+    │   └── ./bin/console
+    ├── ./build.xml
+    ├── ./composer.json
+    ├── ./composer.lock
+    ├── ./config
+    │   ├── ./config/propel.php
+    │   ├── ./config/routes.php
+    │   └── ./config/services.php
+    ├── ./phpcs.xml
+    ├── ./phpunit.xml
+    ├── ./public
+    │   └── ./public/index.php
+    ├── ./README.md
+    ├── ./src
+    │   ├── ./src/Command
+    │   │   └── ./src/Command/RandomInteger.php
+    │   ├── ./src/Controller
+    │   │   └── ./src/Controller/DemoController.php
+    │   ├── ./src/Model
+    │   │   ├── ./src/Model/Base
+    │   │   │   ├── ./src/Model/Base/User.php
+    │   │   │   └── ./src/Model/Base/UserQuery.php
+    │   │   ├── ./src/Model/Config
+    │   │   │   ├── ./src/Model/Config/config.php
+    │   │   │   └── ./src/Model/Config/schema.xml
+    │   │   ├── ./src/Model/Map
+    │   │   │   └── ./src/Model/Map/UserTableMap.php
+    │   │   ├── ./src/Model/Sql
+    │   │   │   ├── ./src/Model/Sql/micro_framework.sql
+    │   │   │   └── ./src/Model/Sql/sqldb.map
+    │   │   ├── ./src/Model/User.php
+    │   │   └── ./src/Model/UserQuery.php
+    │   └── ./src/Service
+    │       └── ./src/Service/Crypto.php
+    └── ./tests
+        └── ./tests/Service
+            └── ./tests/Service/CryptoTest.php
 
 Enjoy!
