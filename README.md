@@ -45,6 +45,13 @@ Result -->
         "hash": "020f61d1c4e647c1a5563bec87821a9c5c328292edbb782f86f34fac86039573"
     }
     
+Continuous Integration PRE-COMMIT
+---------------------------------
+
+    // copy pre-commit to .git/hooks directory to ensure that tests pass before
+    // commit changes
+    cp pre-commit .git/hooks
+    
 Project Structure
 -----------------
     .
