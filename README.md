@@ -36,7 +36,7 @@ Using the PHP built-in server for development purposes with the command:
     }
     ...
 
-Go to localhost:8000/demo
+Go to localhost:7000/demo
 
 Result -->
     
