@@ -1,3 +1,9 @@
 language: php
 php:
-  - '7.1'
+    - '7.1'
+before_install:
+    - cp .env.dist .env
+    - phpenv config-rm xdebug.ini || echo "xdebug not available"
+install:
+    - flags="--prefer-dist --no-interaction --optimize-autoloader --no-suggest --no-progress"
+    - composer install $flags  
