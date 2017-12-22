@@ -3,11 +3,11 @@
 use \DI\Container;
 
 return [
-    'db.username' => \DI\env('db_username', 'root'),
-    'db.password' => \DI\env('db_password', 'root'),
-    'db.host' => \DI\env('db_host', 'localhost'),
-    'db.name' => \DI\env('db_name', 'micro_framework'),
-    'base.uri' => \DI\env('base_uri', 'http://localhost:8000'),
+    'db.username' => \DI\env('DB_USERNAME', 'qsdf'),
+    'db.password' => \DI\env('DB_PASSWORD', 'root'),
+    'db.host' => \DI\env('DB_HOST', 'localhost'),
+    'db.name' => \DI\env('DB_NAME', 'micro_framework'),
+    'base.uri' => \DI\env('BASE_URI', 'http://localhost:8000'),
     PDO::class => function (Container $c) {
         return new \PDO('mysql:dbname='.$c->get('db.name').';host='.$c->get('db.host'), $c->get('db.username'), $c->get('db.password'), null);
     },
