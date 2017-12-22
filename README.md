@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/dridi-walid/micro-framework-skeleton.svg?branch=master)](https://travis-ci.org/dridi-walid/micro-framework-skeleton)
+[![codecov](https://codecov.io/gh/dridi-walid/micro-framework-skeleton/branch/master/graph/badge.svg)](https://codecov.io/gh/dridi-walid/micro-framework-skeleton)
 
 micro-framework-skeleton
 ----------------
