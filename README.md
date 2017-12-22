@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dridi-walid/micro-framework-skeleton.svg?branch=master)](https://travis-ci.org/dridi-walid/micro-framework-skeleton)
+
 micro-framework-skeleton
 ----------------
 
