@@ -8,7 +8,7 @@
         }
     ],
     "autoload": {
-        "classmap": ["src/Model/"],
+        "classmap": ["app/Kernel.php"],
         "psr-4": {
             "": "src/",
             "Test\\": "tests/"

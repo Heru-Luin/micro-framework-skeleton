@@ -1,11 +1,11 @@
 <?php
 
-namespace Base;
+namespace Model\Base;
 
-use \UserQuery as ChildUserQuery;
 use \Exception;
 use \PDO;
-use Map\UserTableMap;
+use Model\UserQuery as ChildUserQuery;
+use Model\Map\UserTableMap;
 use Propel\Runtime\Propel;
 use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\ModelCriteria;
@@ -23,14 +23,14 @@ use Propel\Runtime\Parser\AbstractParser;
  *
  *
  *
- * @package    propel.generator..Base
+ * @package    propel.generator.Model.Base
  */
 abstract class User implements ActiveRecordInterface
 {
     /**
      * TableMap class name
      */
-    const TABLE_MAP = '\\Map\\UserTableMap';
+    const TABLE_MAP = '\\Model\\Map\\UserTableMap';
 
 
     /**
@@ -89,7 +89,7 @@ abstract class User implements ActiveRecordInterface
     protected $alreadyInSave = false;
 
     /**
-     * Initializes internal state of Base\User object.
+     * Initializes internal state of Model\Base\User object.
      */
     public function __construct()
     {
@@ -347,7 +347,7 @@ abstract class User implements ActiveRecordInterface
      * Set the value of [id] column.
      *
      * @param int $v new value
-     * @return $this|\User The current object (for fluent API support)
+     * @return $this|\Model\User The current object (for fluent API support)
      */
     public function setId($v)
     {
@@ -367,7 +367,7 @@ abstract class User implements ActiveRecordInterface
      * Set the value of [username] column.
      *
      * @param string $v new value
-     * @return $this|\User The current object (for fluent API support)
+     * @return $this|\Model\User The current object (for fluent API support)
      */
     public function setUsername($v)
     {
@@ -387,7 +387,7 @@ abstract class User implements ActiveRecordInterface
      * Set the value of [email] column.
      *
      * @param string $v new value
-     * @return $this|\User The current object (for fluent API support)
+     * @return $this|\Model\User The current object (for fluent API support)
      */
     public function setEmail($v)
     {
@@ -458,7 +458,7 @@ abstract class User implements ActiveRecordInterface
             return $startcol + 3; // 3 = UserTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
-            throw new PropelException(sprintf('Error populating %s object', '\\User'), 0, $e);
+            throw new PropelException(sprintf('Error populating %s object', '\\Model\\User'), 0, $e);
         }
     }
 
@@ -807,7 +807,7 @@ abstract class User implements ActiveRecordInterface
      *                one of the class type constants TableMap::TYPE_PHPNAME, TableMap::TYPE_CAMELNAME
      *                TableMap::TYPE_COLNAME, TableMap::TYPE_FIELDNAME, TableMap::TYPE_NUM.
      *                Defaults to TableMap::TYPE_PHPNAME.
-     * @return $this|\User
+     * @return $this|\Model\User
      */
     public function setByName($name, $value, $type = TableMap::TYPE_PHPNAME)
     {
@@ -822,7 +822,7 @@ abstract class User implements ActiveRecordInterface
      *
      * @param  int $pos position in xml schema
      * @param  mixed $value field value
-     * @return $this|\User
+     * @return $this|\Model\User
      */
     public function setByPosition($pos, $value)
     {
@@ -890,7 +890,7 @@ abstract class User implements ActiveRecordInterface
      * @param string $data The source data to import from
      * @param string $keyType The type of keys the array uses.
      *
-     * @return $this|\User The current object, for fluid interface
+     * @return $this|\Model\User The current object, for fluid interface
      */
     public function importFrom($parser, $data, $keyType = TableMap::TYPE_PHPNAME)
     {
@@ -1000,7 +1000,7 @@ abstract class User implements ActiveRecordInterface
      * If desired, this method can also make copies of all associated (fkey referrers)
      * objects.
      *
-     * @param      object $copyObj An object of \User (or compatible) type.
+     * @param      object $copyObj An object of \Model\User (or compatible) type.
      * @param      boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
      * @param      boolean $makeNew Whether to reset autoincrement PKs and make the object new.
      * @throws PropelException
@@ -1024,7 +1024,7 @@ abstract class User implements ActiveRecordInterface
      * objects.
      *
      * @param  boolean $deepCopy Whether to also copy all rows that refer (by fkey) to the current row.
-     * @return \User Clone of current object.
+     * @return \Model\User Clone of current object.
      * @throws PropelException
      */
     public function copy($deepCopy = false)
