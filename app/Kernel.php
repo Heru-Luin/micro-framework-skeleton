@@ -25,13 +25,15 @@ class Kernel
         $containerBuilder= new ContainerBuilder();
         $containerBuilder->useAutowiring(true);
         $containerBuilder->addDefinitions(__DIR__ . '/../config/services.php');
-        $container = $containerBuilder->build();
+        $container = $containerBuilder->build();      
         
         // 3) Match routes
         $routes = include __DIR__ . '/../config/routes.php';
         foreach ($routes as $route) {
             if ($uri === $route['path']) {
                 // 4) Apply middleware beforeAction
+                
+                $response = (new \Middleware\XssProtection)($request, $response);
                 
                 $controller = $route['_controller'];
                 $method = $route['_method'];
