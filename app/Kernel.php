@@ -7,7 +7,6 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class Kernel
 {
-
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $response = new Response();
