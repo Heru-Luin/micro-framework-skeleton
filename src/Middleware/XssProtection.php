@@ -7,10 +7,8 @@ use GuzzleHttp\Psr7\Response;
 
 class XssProtection
 {
-    public function __invoke(ServerRequest $request, Response $response, callable $next)
+    public function __invoke(ServerRequest $request, Response $response)
     {
-        $response->withHeader('X-XSS-Protection', '1; mode=block');        
-        
-        return $next($request, $response);
+        return $response->withHeader('X-XSS-Protection', '1; mode=block');        
     }
 }
