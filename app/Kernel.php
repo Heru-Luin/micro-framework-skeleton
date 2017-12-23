@@ -4,11 +4,12 @@ use DI\ContainerBuilder;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use GuzzleHttp\Psr7\ServerRequest;
 
 class Kernel
 {
 
-    public function handle(ServerRequestInterface $request): ResponseInterface
+    public function handle(ServerRequestInterface $request): Response
     {
         $response = new Response();
         
@@ -33,19 +34,19 @@ class Kernel
             if ($uri === $route['path']) {
                 // 4) Apply middleware beforeAction
                 
-                $response = (new \Middleware\XssProtection)($request, $response);
-                
-                $controller = $route['_controller'];
-                $method = $route['_method'];
-                
-                if (!method_exists($controller, $method)) {
-                    return new Response(404);
-                }
-                
-                return $container->get($controller)->$method($request, $response);
-                //return $container->call([$route['_controller'], $route['_method']]);
-                
-                // 5) Apply middleware afterAction
+                return (new \Middleware\XssProtection)($request, $response, function (ServerRequest $request, Response $response) use ($route, $container) {
+                    return (new \Middleware\Authorization)($request, $response, function (ServerRequest $request, Response $response) use ($route, $container) {
+                        $controller = $route['_controller'];
+                        $method = $route['_method'];                        
+                        
+                        if (!method_exists($controller, $method)) {
+                            return new Response(404);
+                        }                        
+                        
+                        return $container->get($controller)->$method($request, $response);
+                    });
+                });                                                
+                //return $container->call([$route['_controller'], $route['_method']]);                
             }
         }
         
