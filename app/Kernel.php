@@ -31,8 +31,11 @@ class Kernel
         $routes = include __DIR__ . '/../config/routes.php';
         foreach ($routes as $route) {
             if ($uri === $route['path']) {
-                return (new $route['_controller']())->demoAction($request, $response);
+                // 4) Apply middleware beforeAction
+                return $container->get($route['_controller'])->demoAction($request, $response);
                 //return $container->call([$route['_controller'], $route['_method']]);
+                
+                // 5) Apply middleware afterAction
             }
         }
         
