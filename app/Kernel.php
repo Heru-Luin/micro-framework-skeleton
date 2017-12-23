@@ -12,7 +12,7 @@ class Kernel
     {
         $response = new Response();
         
-        // 1) Extract uri
+        // *) Extract uri
         $uri = $request->getUri()->getPath();
        
         if (!empty($uri) && $uri[-1] === "/") {
@@ -21,17 +21,17 @@ class Kernel
                 ->withHeader('Location', substr($uri, 0, -1));
         }
 
-        // 2) Configure container
+        // *) Configure container
         $containerBuilder= new ContainerBuilder();
         $containerBuilder->useAutowiring(true);
         $containerBuilder->addDefinitions(__DIR__ . '/../config/services.php');
         $container = $containerBuilder->build();      
         
-        // 3) Match routes
+        // *) Match routes
         $routes = include __DIR__ . '/../config/routes.php';
         foreach ($routes as $route) {
             if ($uri === $route['path']) {
-                // 4) Apply middleware beforeAction
+                // *) Apply middleware beforeAction
                 
                 $response = (new \Middleware\XssProtection)($request, $response);
                 
@@ -45,7 +45,7 @@ class Kernel
                 return $container->get($controller)->$method($request, $response);
                 //return $container->call([$route['_controller'], $route['_method']]);
                 
-                // 5) Apply middleware afterAction
+                // *) Apply middleware afterAction
             }
         }
         
