@@ -8,15 +8,14 @@ use GuzzleHttp\Psr7\ServerRequest;
 class DemoController
 {
 
-    public function demoAction(\Service\Crypto $crypto, \Model\User $user): Response
+    public function demoAction(ServerRequest $request, Response $response): Response
     {
-        return new Response(
-            200,
-            ['content-type' => 'application/json'],
-            json_encode([
+        return $response
+            ->withStatus(200)
+            ->withHeader('content-type', 'application/json')
+            ->withBody(\GuzzleHttp\Psr7\stream_for(json_encode([
                 'method' => __FUNCTION__,
-                'hash' => $crypto->createHash('sha256', 'micro_framework')
-            ])
-        );
+                'response_methods' => get_class_methods($response)
+            ])));
     }
 }
