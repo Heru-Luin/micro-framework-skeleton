@@ -33,6 +33,7 @@ class Kernel
                 // *) Apply middleware beforeAction
                 
                 $response = (new \Middleware\XssProtection)($request, $response);
+                $response = (new \Middleware\XContentTypeOptions)($request, $response);
                 
                 $controller = $route['_controller'];
                 $method = $route['_method'];
