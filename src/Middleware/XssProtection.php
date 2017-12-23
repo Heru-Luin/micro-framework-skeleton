@@ -9,6 +9,6 @@ class XssProtection
 {
     public function __invoke(ServerRequest $request, Response $response)
     {
-        return $response->withHeader('X-XSS-Protection', '1; mode=block');        
+        return $response->withHeader('X-XSS-Protection', '1; mode=block');
     }
 }
