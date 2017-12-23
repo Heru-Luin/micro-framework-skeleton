@@ -32,7 +32,15 @@ class Kernel
         foreach ($routes as $route) {
             if ($uri === $route['path']) {
                 // 4) Apply middleware beforeAction
-                return $container->get($route['_controller'])->demoAction($request, $response);
+                
+                $controller = $route['_controller'];
+                $method = $route['_method'];
+                
+                if (!method_exists($controller, $method)) {
+                    return new Response(404);
+                }
+                
+                return $container->get($controller)->$method($request, $response);
                 //return $container->call([$route['_controller'], $route['_method']]);
                 
                 // 5) Apply middleware afterAction
