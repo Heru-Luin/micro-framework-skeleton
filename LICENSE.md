@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2017 Dridi Walid
+Copyright (c) 2017-2018 Dridi Walid
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
