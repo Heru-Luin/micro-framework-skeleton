@@ -1,6 +1,8 @@
 {
     "name": "dridi-walid/micro-framework-skeleton",
-    "version": "1.0.0",
+    "description": "Micro Framework Skeleton built using composer",
+    "version": "1.0.1",
+    "license": "MIT",
     "authors": [
         {
             "name": "Dridi Walid",

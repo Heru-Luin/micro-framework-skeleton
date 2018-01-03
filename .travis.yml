@@ -1,0 +1,15 @@
+language: php
+php:
+    - '7.1'
+before_install:
+    - cp .env.dist .env
+install:
+    - flags="--prefer-dist --no-interaction --optimize-autoloader --no-suggest --no-progress"
+    - composer install $flags  
+    
+script:
+    - vendor/bin/phpunit --coverage-clover=coverage.xml
+
+after_success:
+    - export CODECOV_TOKEN="b5e1f872-3623-45ed-9a42-e201c5ec1d70"
+    - bash <(curl -s https://codecov.io/bash)

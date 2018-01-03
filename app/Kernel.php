@@ -7,31 +7,45 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class Kernel
 {
-
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        // 1) Extract uri
+        $response = new Response();
+        
+        // *) Extract uri
         $uri = $request->getUri()->getPath();
        
         if (!empty($uri) && $uri[-1] === "/") {
-            return (new Response())
+            return $response
                 ->withStatus(301)
                 ->withHeader('Location', substr($uri, 0, -1));
-                
-            return $response;
         }
 
-        // 2) Configure container
+        // *) Configure container
         $containerBuilder= new ContainerBuilder();
         $containerBuilder->useAutowiring(true);
         $containerBuilder->addDefinitions(__DIR__ . '/../config/services.php');
-        $container = $containerBuilder->build();
+        $container = $containerBuilder->build();      
         
-        // 3) Match routes
+        // *) Match routes
         $routes = include __DIR__ . '/../config/routes.php';
         foreach ($routes as $route) {
             if ($uri === $route['path']) {
-                return $container->call([$route['_controller'], $route['_method']]);
+                // *) Apply middleware beforeAction
+                
+                $response = (new \Middleware\XssProtection)($request, $response);
+                $response = (new \Middleware\XContentTypeOptions)($request, $response);
+                
+                $controller = $route['_controller'];
+                $method = $route['_method'];
+                
+                if (!method_exists($controller, $method)) {
+                    return new Response(404);
+                }
+                
+                return $container->get($controller)->$method($request, $response);
+                //return $container->call([$route['_controller'], $route['_method']]);
+                
+                // *) Apply middleware afterAction
             }
         }
         

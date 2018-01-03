@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/dridi-walid/micro-framework-skeleton.svg?branch=master)](https://travis-ci.org/dridi-walid/micro-framework-skeleton)
+[![codecov](https://codecov.io/gh/dridi-walid/micro-framework-skeleton/branch/master/graph/badge.svg)](https://codecov.io/gh/dridi-walid/micro-framework-skeleton)
+
 micro-framework-skeleton
 ----------------
 
@@ -60,17 +63,23 @@ Continuous Integration PRE-COMMIT
 Project Structure
 -----------------
     .
+    ├── app
+    │   └── Kernel.php
     ├── bin
     │   └── console
     ├── build.xml
+    ├── CODE_OF_CONDUCT.md
     ├── composer.json
     ├── composer.lock
     ├── config
     │   ├── propel.php
     │   ├── routes.php
     │   └── services.php
+    ├── CONTRIBUTING.md
+    ├── LICENSE.md
     ├── phpcs.xml
     ├── phpunit.xml
+    ├── pre-commit
     ├── public
     │   └── index.php
     ├── README.md
@@ -79,6 +88,8 @@ Project Structure
     │   │   └── RandomInteger.php
     │   ├── Controller
     │   │   └── DemoController.php
+    │   ├── Middleware
+    │   │   └── XssProtection.php
     │   ├── Model
     │   │   ├── Base
     │   │   │   ├── User.php
@@ -96,6 +107,10 @@ Project Structure
     │   └── Service
     │       └── Crypto.php
     └── tests
+        ├── Command
+        │   └── RandomIntegerTest.php
+        ├── Middleware
+        │   └── XssProtectionTest.php
         └── Service
             └── CryptoTest.php
 
